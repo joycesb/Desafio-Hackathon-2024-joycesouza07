@@ -4,22 +4,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./assets/favicon/site.webmanifest">
+
   <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <title>replit</title>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <title>Projeto Mesa Farta</title>
 </head>
 
 <body>
   <!-- menu nav -->
   <nav class="nav">
-    <a class="nav-link active" href="#">Ativo</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Desativado</a>
+    <a class="nav-link active" href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+        fill="currentColor" class="bi bi-box2-heart" viewBox="0 0 16 16">
+        <path d="M8 7.982C9.664 6.309 13.825 9.236 8 13 2.175 9.236 6.336 6.31 8 7.982" />
+        <path
+          d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4zm0 1H7.5v3h-6zM8.5 4V1h3.75l2.25 3zM15 5v10H1V5z" />
+      </svg> Página Inicial</a>
+    <a class="nav-link" href="./sobre.html">Sobre o projeto</a>
+    <a class="nav-link" href="./doacao.html">Faça sua doação</a>
+    <a class="nav-link" href="./contato.html">Contato</a>
   </nav>
-  <!-- área institucional -->
-  <section>
+
 
   </section>
   <!-- depoimentos -->
@@ -27,29 +49,33 @@
     <h2>Depoimentos</h2>
     <div class="d-flex flex-md-row">
       <blockquote class="blockquote text-center">
-        <p class="mb-0">Lorem ipsum dolor sit ame, consectetur adipiscing elit. Integer posuere erat a ante.
+        <p class="mb-0">O 'Mesa Farta' é uma luz brilhante em tempos sombrios, mostrando-nos que, mesmo diante dos
+          desafios, a união e a compaixão podem construir uma mesa farta para todos.
         </p>
-        <footer class="blockquote-footer">Alguém famoso na <cite title="Título da fonte">Título da fonte</cite>
+        <footer class="blockquote-footer">Maria Carvalho na <cite title="Título da fonte">Revista Exame</cite>
         </footer>
       </blockquote>
     </div>
     <div class="d-flex flex-md-row">
       <blockquote class="blockquote text-center">
-        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+        <p class="mb-0">Graças ao compromisso incansável do projeto 'Mesa Farta', vemos a transformação do desperdício
+          em abundância, e a solidariedade se torna o ingrediente principal de cada refeição servida.
         </p>
-        <footer class="blockquote-footer">Alguém famoso na <cite title="Título da fonte">Título da fonte</cite>
+        <footer class="blockquote-footer">João da Silva no <cite title="Título da fonte">Jornal A Tribuna</cite>
         </footer>
       </blockquote>
     </div>
     <div class="d-flex flex-md-row">
       <blockquote class="blockquote text-center">
-        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+        <p class="mb-0">O projeto 'Mesa Farta' é um verdadeiro exemplo de generosidade e empatia, alimentando não apenas
+          corpos famintos, mas também esperanças renovadas em nossas comunidades.
         </p>
-        <footer class="blockquote-footer">Alguém famoso na <cite title="Título da fonte">Título da fonte</cite>
+        <footer class="blockquote-footer">Hilda Oliveira na <cite title="Título da fonte">Revista O Globo</cite>
         </footer>
       </blockquote>
     </div>
   </section>
+
   <!-- listagem dos receptores de doações -->
   <section class="container">
     <h2>Nossos Receptores</h2>
@@ -89,8 +115,16 @@
           </div>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
             <div class="card-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-              squid.
+              Em 2022, o Brasil retornou ao Mapa da Fome. Legado de um governo que negava a existência do problema e fez
+              o país contabilizar 33 milhões de pessoas passando fome.
+              O PLANO BRASIL SEM FOME é a resposta do Governo Federal a essa calamidade:
+              São 80 ações e programas, com mais de 100 metas propostas pelos 24 Ministérios que compõem a Câmara
+              Interministerial de Segurança Alimentar e Nutricional – CAISAN, organizadas em 3 eixos:<br>
+              <ul>
+                <li>Acesso à renda, redução da pobreza e promoção da cidadania;</li>
+                <li>Alimentação adequada e saudável, da produção ao consumo;</li>
+                <li>Mobilização para o combate à Fome.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -118,147 +152,10 @@
       </div>
     </div>
     <div class="mt-3 mb-3">
-      <button type="button" class="btn btn-outline-primary">Seja nosso parceiro</button>
+      <button type="button" class="btn btn-outline-primary"><a href="./doacao.html">Seja nosso parceiro</a></button>
     </div>
   </section>
-  <!-- formulários -->
-  <section>
-    <div class="container">
-      <h2>Faça sua Doação</h2>
-      <h3>Cadastro de Alimentos</h3>
-      <form>
-        <div class="form-row">
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Nome">
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Imagem">
-          </div>
-        </div>
-        <button class="btn btn-outline-primary mt-3 mb-3" type="submit">Enviar</button>
-      </form>
-      <h3>Cadastro de Doações</h3>
-      <form class="needs-validation" novalidate>
-        <div class="form-row">
-          <div class="col-md-4 mb-3">
-            <label for="validationCustom01">Primeiro nome</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="Nome" value="Mark" required>
-            <div class="valid-feedback">
-              Tudo certo!
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="validationCustom02">Sobrenome</label>
-            <input type="text" class="form-control" id="validationCustom02" placeholder="Sobrenome" value="Otto"
-              required>
-            <div class="valid-feedback">
-              Tudo certo!
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="inputEmail3">Email</label>
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
-            <div class="invalid-feedback">
-              Por favor, escolha um email válido
-            </div>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-3 mb-3">
-            <label for="validationCustom05">CEP</label>
-            <input type="text" class="form-control" id="validationCustom05" placeholder="CEP" required>
-            <div class="invalid-feedback">
-              Por favor, informe um CEP válido.
-            </div>
-          </div>
-          <div class="col-md-9 mb-3">
-            <label for="validationCustom10">Endereço</label>
-            <input type="text" class="form-control" id="validationCustom10" placeholder="Endereço" required>
-            <div class="invalid-feedback">
-              Por favor, informe o endereço correto.
-            </div>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="validationCustom09">Número</label>
-            <input type="text" class="form-control" id="validationCustom09" placeholder="Numero">
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for="validationCustom03">Cidade</label>
-            <input type="text" class="form-control" id="validationCustom03" placeholder="Cidade" required>
-            <div class="invalid-feedback">
-              Por favor, informe uma cidade válida.
-            </div>
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for="validationCustom04">Estado</label>
-            <input type="text" class="form-control" id="validationCustom04" placeholder="Estado" required>
-            <div class="invalid-feedback">
-              Por favor, informe um estado válido.
-            </div>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-4 mb-3">
-            <label for="validationCustom06">Telefone</label>
-            <input type="text" class="form-control" id="validationCustom06" placeholder="Telefone" required>
-            <div class="invalid-feedback">
-              Informe um número válido
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="inputReceptor">Receptor</label>
-            <select id="inputReceptor" class="form-control">
-              <option selected>Escolher...</option>
-              <option>...</option>
-            </select>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="inputAlimento">Alimento</label>
-            <select id="inputAlimento" class="form-control">
-              <option selected>Escolher...</option>
-              <option>...</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-6 mb-3">
-            <label for="validationCustom07">Data de Validade</label>
-            <input type="text" class="form-control" id="validationCustom07" placeholder="Validade">
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="validationCustom08">Quantidade</label>
-            <input type="text" class="form-control" id="validationCustom08" placeholder="Quantidade">
-          </div>
-        </div>
-        <button class="btn btn-primary" type="submit">Enviar</button>
-      </form>
-      <!-- att cadastro para doar + de 1 alimento -->
-  </section>
-  <section>
-    <!-- area de contato -->
-    <div class="container">
-      <h2>Canais de Comunicação</h2>
-      <h3>Formulário de contato</h3>
-    </div>
 
-  </section>
-  <footer>
-    <div class="container">
-      <h2>Redes Sociais</h2>
-    </div>
-  </footer>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-  <script src="/assets/js/script.js"></script>
 </body>
 
 </html>
