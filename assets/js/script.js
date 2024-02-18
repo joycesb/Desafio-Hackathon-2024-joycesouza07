@@ -28,8 +28,35 @@ function adicionarAlimento(element, nomeLista) {
   localStorage.setItem(nomeLista, JSON.stringify(array));
 }
 
-function adicionarParceiro(element, nomeParceiro) {
-  array = JSON.parse(localStorage.getItem())
+function adicionarParceiro(nomeLista) {
+  debugger
+  let nomeParceiro = document.getElementById("nomeParceiro").value;
+  let cidadeParceiro = document.getElementById("cidadeParceiro").value;
+  let estadoParceiro = document.getElementById("estadoParceiro").value;
+  let emailParceiro = document.getElementById("emailParceiro").value;
+  let imagemParceiro = document.getElementById("imagemParceiro").value;
+  let descricao = document.getElementById("descricao").value;
+  let telefoneParceiro = document.getElementById("telefoneParceiro").value;
+
+  let parceiro = {
+    nome: nomeParceiro,
+    cidade: cidadeParceiro,
+    estado: estadoParceiro,
+    email: emailParceiro,
+    imagem: imagemParceiro,
+    descricao: descricao,
+    telefone: telefoneParceiro
+
+  };
+
+  array = JSON.parse(localStorage.getItem(nomeLista));
+  if (array == null)
+    array = [];
+
+  array.push(parceiro);
+  localStorage.setItem(nomeLista, JSON.stringify(array));
+
+  atualizarTabela();
 }
 
 function atualizarTabela() {
@@ -43,6 +70,8 @@ function atualizarTabela() {
     nomeParceiro,
     cidade,
     estado,
+    email,
+    imagem,
     descricao,
     telefone
   ];
@@ -57,12 +86,16 @@ function atualizarTabela() {
     let td_parceiro = tr.insertCell();
     let td_cidade = tr.insertCell();
     let td_estado = tr.insertCell();
+    let td_email = tr.insertCell();
+    let td_imagem = tr.insertCell();
     let td_descricao = tr.insertCell();
     let td_telefone = tr.insertCell();
 
     td_parceiro.innerText = this.parceiroArray[i].nomeParceiro;
     td_cidade.innerText = this.parceiroArray[i].cidade;
     td_estado.innerText = this.parceiroArray[i].estado;
+    td_email.innerText = this.parceiroArray[i].email;
+    td_imagem.innerText = this.parceiroArray[i].imagem;
     td_descricao.innerText = this.parceiroArray[i].descricao;
     td_telefone.innerText = this.parceiroArray[i].telefone;
 
