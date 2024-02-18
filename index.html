@@ -158,22 +158,32 @@
           </div>
         </div>
         <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="emailParceiro">Email</label>
+            <input type="text" class="form-control" id="emailParceiro" placeholder="Email">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="imagemParceiro">Imagem</label>
+            <input type="url" class="form-control" id="imagemParceiro" placeholder="https://example.com"
+              pattern="https://.*">
+          </div>
+        </div>
+        <div class="form-row">
           <div class="col-md-9 mb-3">
             <label for="descricao">Descrição</label>
             <input type="text" class="form-control" id="descricao" placeholder="Descrição">
           </div>
           <div class="col-md-3 mb-3">
-            <label for="telefone">Telefone</label>
-            <input type="text" class="form-control" id="telefone" placeholder="Telefone" required>
+            <label for="telefoneParceiro">Telefone</label>
+            <input type="text" class="form-control" id="telefoneParceiro" placeholder="Telefone" required>
             <div class="invalid-feedback">
               Informe um número válido
             </div>
           </div>
         </div>
-        <button class="btn btn-outline-primary" onclick="adicionarReceptor(nome, 'receptores')"
-          type="submit">Enviar</button>
+        <button class="btn btn-outline-primary" onclick="adicionarParceiro('receptores')" type="button">Enviar</button>
       </form>
-      <table class="table" id="listaReceptores">
+      <table class="table mt-3" id="listaReceptores">
         <thead>
           <tr>
             <th scope="col">#Id</th>
