@@ -22,7 +22,7 @@
   <title>Projeto Mesa Farta</title>
 </head>
 
-<body>
+<body onload="carregarSelects()">
   <!-- menu nav -->
   <nav class="nav navbar navbar-expand-lg navbar-dark nav-color mb-2">
     <div class="container-fluid">
@@ -57,13 +57,12 @@
     </div>
   </nav>
 
-
   <!-- formulários -->
   <section>
     <div class="container">
       <h1 class="merriweather-bold mb-3">Cadastre-se e escolha uma instituição para doar</h1>
       <h3 class="merriweather-bold">Cadastro de Doações</h3>
-      <form class="needs-validation merriweather-regular novalidate">
+      <form class="needs-validation merriweather-regular novalidate" id="doadores">
         <form class="needs-validation" method="get" novalidate>
           <div class="form-row">
             <div class="col-md-4 mb-3">
@@ -136,14 +135,13 @@
               <label for="inputReceptor">Receptor</label>
               <select id="inputReceptor" class="form-control">
                 <option selected>Escolher...</option>
-                <option>...</option>
+                <!-- <option>...</option> -->
               </select>
             </div>
             <div class="col-md-4 mb-3">
               <label for="inputAlimento">Alimento</label>
               <select id="inputAlimento" class="form-control" required>
                 <option selected>Escolher...</option>
-                <option>...</option>
               </select>
               <div class="invalid-feedback">
                 Informe um número válido
@@ -152,15 +150,15 @@
           </div>
           <div class="form-row">
             <div class="col-md-6 mb-3">
-              <label for="validationCustom07">Data de Validade</label>
-              <input type="text" class="form-control" id="validationCustom07" placeholder="Validade">
+              <label for="dataValidade">Data de Validade</label>
+              <input type="text" class="form-control" id="dataValidade" placeholder="Validade">
             </div>
             <div class="col-md-6 mb-3">
-              <label for="validationCustom08">Quantidade</label>
-              <input type="text" class="form-control" id="validationCustom08" placeholder="Quantidade">
+              <label for="quantidade">Quantidade</label>
+              <input type="text" class="form-control" id="quantidade" placeholder="Quantidade">
             </div>
           </div>
-          <button class="btn btn-color mb-3" type="submit">Enviar</button>
+          <button class="btn btn-color mb-3" type="button" onclick="adicionarDoacao('doadores')">Enviar</button>
           <br>
         </form>
     </div>

@@ -22,7 +22,7 @@
   <title>Projeto Mesa Farta</title>
 </head>
 
-<body>
+<body onload="atualizarTabelaAlimentos(null)">
   <!-- menu nav -->
   <nav class="nav navbar navbar-expand-lg navbar-dark nav-color mb-2">
     <div class="container-fluid">
@@ -66,16 +66,29 @@
       <form class="merriweather-regular">
         <div class="form-row">
           <div class="col">
-            <input type="text" class="form-control" placeholder="Nome">
+            <input type="text" class="form-control" placeholder="Nome" id="nome">
           </div>
-          <div class="col">
+          <!-- <div class="col">
             <input type="text" class="form-control" placeholder="Imagem">
-          </div>
+          </div> -->
         </div>
-        <button class="btn mt-3 mb-3 btn-color" type="submit">Enviar</button><br>
+        <button class="btn mt-3 mb-3 btn-color" type="button"
+          onclick="adicionarAlimento(nome, 'alimentos')">Enviar</button><br>
       </form>
+      <table class="table mt-3" id="listaAlimentos">
+        <thead>
+          <tr>
+            <th scope="col">#Id</th>
+            <th scope="col">Nome</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+      </table>
     </div>
+
   </section>
+
 
 
 
@@ -88,7 +101,7 @@
       </span>
     </div>
   </footer>
-  
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>

@@ -18,124 +18,103 @@
 
 var array = [];
 
-function adicionarAlimento(element, nomeLista) {
+function adicionarAlimento(element) {
+  let nomeLista = 'alimentos';
   array = JSON.parse(localStorage.getItem(nomeLista));
   if (array == null)
     array = [];
-  let adicionar = element.value;// document.getElementById(element.id).value;
-  array.push(adicionar);
+  let alimento = { id: pegarProximoId(array), nome: element.value };
+  array.push(alimento);
   element.value = "";
   localStorage.setItem(nomeLista, JSON.stringify(array));
+
+  atualizarTabelaAlimentos(array);
+}
+
+function atualizarTabelaAlimentos(array) {
+  let tbody = document.getElementById("tbody");
+  tbody.innerText = "";
+
+  if (array == null)
+    array = JSON.parse(localStorage.getItem('alimentos'));
+
+  for (let i = 0; i < array.length; i++) {
+    let tr = tbody.insertRow();
+
+    let td_id = tr.insertCell();
+    let td_nome = tr.insertCell();
+
+    td_id.innerText = array[i].id;
+    td_nome.innerText = array[i].nome;
+  }
 }
 
 function adicionarParceiro(nomeLista) {
-  debugger
+  array = JSON.parse(localStorage.getItem(nomeLista));
+  if (array == null)
+    array = [];
+
   let nomeParceiro = document.getElementById("nomeParceiro").value;
   let cidadeParceiro = document.getElementById("cidadeParceiro").value;
   let estadoParceiro = document.getElementById("estadoParceiro").value;
   let emailParceiro = document.getElementById("emailParceiro").value;
-  let imagemParceiro = document.getElementById("imagemParceiro").value;
+  // let imagemParceiro = document.getElementById("imagemParceiro").value;
   let descricao = document.getElementById("descricao").value;
   let telefoneParceiro = document.getElementById("telefoneParceiro").value;
 
   let parceiro = {
+    id: pegarProximoId(array),
     nome: nomeParceiro,
     cidade: cidadeParceiro,
     estado: estadoParceiro,
     email: emailParceiro,
-    imagem: imagemParceiro,
+    // imagem: imagemParceiro,
     descricao: descricao,
     telefone: telefoneParceiro
-
   };
-
-  array = JSON.parse(localStorage.getItem(nomeLista));
-  if (array == null)
-    array = [];
 
   array.push(parceiro);
   localStorage.setItem(nomeLista, JSON.stringify(array));
 
-  atualizarTabela();
+  // window.location.href = "/obrigado";
+
+  atualizarTabelaParceiros();
 }
 
-function atualizarTabela() {
-  let nomeParceiro = document.getElementById("nomeParceiro").value;
-  let cidade = document.getElementById("cidadeParceiro").value;
-  let estado = document.getElementById("estadoParceiro").value;
-  let descricao = document.getElementById("descricao").value;
-  let telefone = document.getElementById("telefone").value;
-
-  var parceiroArray = [
-    nomeParceiro,
-    cidade,
-    estado,
-    email,
-    imagem,
-    descricao,
-    telefone
-  ];
-
-  console.log(JSON.stringify(parceiro));
+function atualizarTabelaParceiros(parceiroArray) {
   let tbody = document.getElementById("tbody");
   tbody.innerText = "";
+
+  if (parceiroArray == null)
+    parceiroArray = JSON.parse(localStorage.getItem('receptores'));
 
   for (let i = 0; i < parceiroArray.length; i++) {
     let tr = tbody.insertRow();
 
+    let td_id = tr.insertCell();
     let td_parceiro = tr.insertCell();
     let td_cidade = tr.insertCell();
     let td_estado = tr.insertCell();
     let td_email = tr.insertCell();
-    let td_imagem = tr.insertCell();
     let td_descricao = tr.insertCell();
     let td_telefone = tr.insertCell();
 
-    td_parceiro.innerText = this.parceiroArray[i].nomeParceiro;
-    td_cidade.innerText = this.parceiroArray[i].cidade;
-    td_estado.innerText = this.parceiroArray[i].estado;
-    td_email.innerText = this.parceiroArray[i].email;
-    td_imagem.innerText = this.parceiroArray[i].imagem;
-    td_descricao.innerText = this.parceiroArray[i].descricao;
-    td_telefone.innerText = this.parceiroArray[i].telefone;
-
-
+    td_id.innerText = parceiroArray[i].id;
+    td_parceiro.innerText = parceiroArray[i].nome;
+    td_cidade.innerText = parceiroArray[i].cidade;
+    td_estado.innerText = parceiroArray[i].estado;
+    td_email.innerText = parceiroArray[i].email;
+    td_descricao.innerText = parceiroArray[i].descricao;
+    td_telefone.innerText = parceiroArray[i].telefone;
   }
 
-}
 
-function mostrar(listaId, nomeLista) {
-  // populateSelect();
-  let lista = document.getElementById(listaId);
-  lista.innerHTML = "";
-  array = JSON.parse(localStorage.getItem(nomeLista));
 
-  for (var i in array) {
-    let p = document.createElement("p");
-    p.innerHTML = array[i];
-    lista.append(p);
+  if (parceiroArray != null) {
+    let tabela = document.getElementById("listaReceptores");
+    tabela.hidden = false;
   }
 }
-
-// let listaAlimentos = [
-//   { "id": "001", "nome_alimento": "Arroz" },
-//   { "id": "002", "nome_alimento": "Feijão" },
-//   { "id": "003", "nome_alimento": "Macarrão" },
-// ];
-
-// function populateSelect() {
-//   let ele = document.getElementById('nome');
-//   for (let i = 0; i < listaAlimentos.length; i++) {
-//     ele.innerHTML = ele.innerHTML +
-//       '<option value="' + listaAlimentos[i]['id'] + '">' + listaAlimentos[i]['nome_alimento'] + '</option>';
-//   }
-// }
-
-// function show(ele) {
-//   let msg = document.getElementById('msg');
-//   msg.innerHTML = 'Selecione o alimento: <b>' + ele.options[ele.selectedIndex].text + '</b> </br>' +
-//     'id: <b>' + ele.value + '</b>';
-// }
 
 function limpa_formulário_cep() {
   //Limpa valores do formulário de cep.
@@ -161,8 +140,6 @@ function meu_callback(conteudo) {
 }
 
 function pesquisacep(valor) {
-
-  debugger
   //Nova variável "cep" somente com dígitos.
   var cep = valor.replace(/\D/g, '');
 
@@ -202,3 +179,77 @@ function pesquisacep(valor) {
     limpa_formulário_cep();
   }
 };
+
+function pegarProximoId(array) {
+  if (array == null)
+    return 1;
+
+  return array.length + 1;
+}
+
+function adicionarDoacao(nomeLista) {
+  array = JSON.parse(localStorage.getItem(nomeLista));
+  if (array == null)
+    array = [];
+
+  let primeiroNome = document.getElementById("primeiroNome").value;
+  let sobrenome = document.getElementById("sobrenome").value;
+  let email = document.getElementById("inputEmail3").value;
+  let cep = document.getElementById("cep").value;
+  let endereco = document.getElementById("endereco").value;
+  let bairro = document.getElementById("bairro").value;
+  let numero = document.getElementById("numero").value;
+  let cidade = document.getElementById("cidade").value;
+  let uf = document.getElementById("uf").value;
+  let telefone = document.getElementById("validationCustom06").value;
+  let inputReceptor = document.getElementById("inputReceptor").value;
+  let inputAlimento = document.getElementById("inputAlimento").value;
+  let dataValidade = document.getElementById("dataValidade").value;
+  let quantidade = document.getElementById("quantidade").value;
+
+  let doador = {
+    id: pegarProximoId(array),
+    primeiroNome: primeiroNome,
+    sobrenome: sobrenome,
+    estado: uf,
+    email: email,
+    cep: cep,
+    endereco: endereco,
+    bairro: bairro,
+    numero: numero,
+    cidade: cidade,
+    uf: uf,
+    telefone: telefone,
+    receptor: inputReceptor,
+    alimento: inputAlimento,
+    dataValidade: dataValidade,
+    quantidade: quantidade
+
+  };
+
+  array.push(doador);
+  localStorage.setItem(nomeLista, JSON.stringify(array));
+
+  window.location.href = "/obrigado.html";
+}
+
+function carregarSelects() {
+  let selectReceptores = document.getElementById("inputReceptor");
+  let receptoresArray = JSON.parse(localStorage.getItem('receptores'));
+  for (let i = 0; i < receptoresArray.length; i++) {
+    var opt = document.createElement("option");
+    opt.value = receptoresArray[i].id; //index;
+    opt.innerHTML = receptoresArray[i].nome;
+    selectReceptores.appendChild(opt);
+  }
+
+  let selectAlimentos = document.getElementById("inputAlimento");
+  let alimentosArray = JSON.parse(localStorage.getItem('alimentos'));
+  for (let i = 0; i < alimentosArray.length; i++) {
+    var opt = document.createElement("option");
+    opt.value = alimentosArray[i].id; //index;
+    opt.innerHTML = alimentosArray[i].nome;
+
+    selectAlimentos.appendChild(opt);
+  }
+}
