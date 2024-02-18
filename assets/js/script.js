@@ -17,13 +17,8 @@
 })();
 
 var array = [];
-var pessoas = [
-  { id: 1, nome: 'Wesley' },
-  { id: 2, nome: 'Joyce' },
-]
 
 function adicionarAlimento(element, nomeLista) {
-  debugger
   array = JSON.parse(localStorage.getItem(nomeLista));
   if (array == null)
     array = [];
@@ -32,14 +27,47 @@ function adicionarAlimento(element, nomeLista) {
   element.value = "";
   localStorage.setItem(nomeLista, JSON.stringify(array));
 }
-function adicionarReceptor() {
+
+function adicionarParceiro(element, nomeParceiro) {
+  array = JSON.parse(localStorage.getItem())
+}
+
+function atualizarTabela() {
   let nomeParceiro = document.getElementById("nomeParceiro").value;
   let cidade = document.getElementById("cidadeParceiro").value;
   let estado = document.getElementById("estadoParceiro").value;
   let descricao = document.getElementById("descricao").value;
   let telefone = document.getElementById("telefone").value;
 
+  var parceiroArray = [
+    nomeParceiro,
+    cidade,
+    estado,
+    descricao,
+    telefone
+  ];
 
+  console.log(JSON.stringify(parceiro));
+  let tbody = document.getElementById("tbody");
+  tbody.innerText = "";
+
+  for (let i = 0; i < parceiroArray.length; i++) {
+    let tr = tbody.insertRow();
+
+    let td_parceiro = tr.insertCell();
+    let td_cidade = tr.insertCell();
+    let td_estado = tr.insertCell();
+    let td_descricao = tr.insertCell();
+    let td_telefone = tr.insertCell();
+
+    td_parceiro.innerText = this.parceiroArray[i].nomeParceiro;
+    td_cidade.innerText = this.parceiroArray[i].cidade;
+    td_estado.innerText = this.parceiroArray[i].estado;
+    td_descricao.innerText = this.parceiroArray[i].descricao;
+    td_telefone.innerText = this.parceiroArray[i].telefone;
+
+
+  }
 
 }
 
