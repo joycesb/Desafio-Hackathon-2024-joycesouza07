@@ -81,6 +81,46 @@ function adicionarParceiro(nomeLista) {
   atualizarTabelaParceiros();
 }
 
+function carregarDados() {
+  let parceirosAtuais = [
+    {
+      id: 1,
+      nome: "Fome Zero",
+      telefone: "(61)18230-2414",
+      cidade: "Brasília",
+      estado: "DF",
+      email: "fomezero@gov.br",
+      descricao: "O Programa Fome Zero consistia num conjunto de mais de 30 programas complementares dedicados a combater as causas imediatas e subjacentes da fome e da insegurança alimentar, implementados pelo ou com o apoio do governo federal."
+    },
+    {
+      id: 2,
+      nome: "Bahia Sem Fome",
+      telefone: "(77)18274-0182",
+      cidade: "Salvador",
+      estado: "BA",
+      email: "combate.fome@casacivil.ba.gov.br",
+      descricao: "O BAHIA SEM FOME é o Programa Estadual de Combate à Fome do Governo do Estado da Bahia, e tem como principal meta assegurar às pessoas em situação de vulnerabilidade social o acesso a alimentos em qualidade e quantidade necessárias à garantia do direito humano à alimentação adequada e saudável, bem como promover a segurança alimentar e nutricional, reduzindo os índices de insegurança alimentar grave no Estado da Bahia, com foco nas famílias extremamente pobres no campo e na cidade."
+    },
+    {
+      id: 3,
+      nome: "Instituto Lar",
+      telefone: "(21)91274-1902",
+      cidade: "Rio de Janeiro",
+      estado: "RJ",
+      email: "contato@institutolar.org.br",
+      descricao: "O Instituto LAR é uma organização sem fins lucrativos, que nasceu em 2016, na cidade do Rio de Janeiro, para apoiar o processo de reinserção social de pessoas em situação de rua."
+    }
+  ];
+
+  array = JSON.parse(localStorage.getItem('receptores'));
+  if (array == null) {
+    array = parceirosAtuais;
+    localStorage.setItem('receptores', JSON.stringify(array));
+  }
+
+  atualizarTabelaParceiros(array);
+}
+
 function atualizarTabelaParceiros(parceiroArray) {
   let tbody = document.getElementById("tbody");
   tbody.innerText = "";
