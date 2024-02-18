@@ -22,7 +22,7 @@ var pessoas = [
   { id: 2, nome: 'Joyce' },
 ]
 
-function add(element, nomeLista) {
+function adicionarAlimento(element, nomeLista) {
   debugger
   array = JSON.parse(localStorage.getItem(nomeLista));
   if (array == null)
@@ -32,9 +32,20 @@ function add(element, nomeLista) {
   element.value = "";
   localStorage.setItem(nomeLista, JSON.stringify(array));
 }
+function adicionarReceptor() {
+  let nomeParceiro = document.getElementById("nomeParceiro").value;
+  let cidade = document.getElementById("cidadeParceiro").value;
+  let estado = document.getElementById("estadoParceiro").value;
+  let descricao = document.getElementById("descricao").value;
+  let telefone = document.getElementById("telefone").value;
+
+
+
+}
 
 function mostrar(listaId, nomeLista) {
-  populateSelect();
+  // populateSelect();
+  debugger
   let lista = document.getElementById(listaId);
   lista.innerHTML = "";
   array = JSON.parse(localStorage.getItem(nomeLista));
