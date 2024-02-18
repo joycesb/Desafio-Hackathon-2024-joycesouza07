@@ -1,0 +1,91 @@
+.merriweather-light {
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.merriweather-light-italic {
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.merriweather-regular {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.merriweather-regular-italic {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.merriweather-bold {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.merriweather-bold-italic {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.merriweather-black {
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.merriweather-black-italic {
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.footer-color {
+  background-color: #9AD0C2;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nav-color {
+  background-color: #265073;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.btn-color {
+  background-color: #2D9596;
+  color: white;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.btn-off-color {
+  background-color: #9AD0C2;
+  color: #265073;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.btn-color:hover {
+  color: #265073;
+}
+
+.btn-off-color:hover {
+  color: #F1FADA;
+}
+
+p {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
+}
