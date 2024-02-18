@@ -15,20 +15,12 @@
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+
 
   <title>Projeto Mesa Farta</title>
 </head>
 
-<body>
+<body onload="mostrar('listaReceptores','receptores')">
   <!-- menu nav -->
   <nav class="nav">
     <a class="nav-link active" href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -38,6 +30,14 @@
           d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4zm0 1H7.5v3h-6zM8.5 4V1h3.75l2.25 3zM15 5v10H1V5z" />
       </svg> Página Inicial</a>
     <a class="nav-link" href="./sobre.html">Sobre o projeto</a>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+        aria-expanded="false">Faça sua doação</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="./doacaoAlimentos.html">Cadastro de Alimentos</a>
+        <a class="dropdown-item" href="./doacao.html">Cadastro de Doação</a>
+      </div>
+    </li>
     <a class="nav-link" href="./doacao.html">Faça sua doação</a>
     <a class="nav-link" href="./contato.html">Contato</a>
   </nav>
@@ -79,83 +79,83 @@
   <!-- listagem dos receptores de doações -->
   <section class="container">
     <h2>Nossos Receptores</h2>
-    <div>
-      <div class="accordion" id="accordionExample">
-        <div class="card">
-          <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
-                Ação da Cidadania
-              </button>
-            </h5>
-          </div>
-
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-            <div class="card-body">
-              Fundada pelo sociólogo Herbert de Souza, o Betinho, a Ação da Cidadania nasceu em 1993,
-              formando uma imensa rede de mobilização de alcance nacional para ajudar 32 milhões de
-              brasileiros que, segundo dados do Ipea, estavam abaixo da linha da pobreza. <br> Criada no
-              auge do Movimento pela Ética na Política, a Ação da Cidadania contra a Fome, a Miséria e
-              pela Vida se transformou no movimento social mais reconhecido do Brasil. Seu principal eixo
-              de atuação é uma extensa rede de mobilização formada por comitês locais da sociedade civil
-              organizada, em sua maioria compostos por lideranças comunitárias, mas com participação de
-              todos os setores sociais.
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" id="headingTwo">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
-                aria-expanded="false" aria-controls="collapseTwo">
-                Brasil Sem Fome
-              </button>
-            </h5>
-          </div>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-            <div class="card-body">
-              Em 2022, o Brasil retornou ao Mapa da Fome. Legado de um governo que negava a existência do problema e fez
-              o país contabilizar 33 milhões de pessoas passando fome.
-              O PLANO BRASIL SEM FOME é a resposta do Governo Federal a essa calamidade:
-              São 80 ações e programas, com mais de 100 metas propostas pelos 24 Ministérios que compõem a Câmara
-              Interministerial de Segurança Alimentar e Nutricional – CAISAN, organizadas em 3 eixos:<br>
-              <ul>
-                <li>Acesso à renda, redução da pobreza e promoção da cidadania;</li>
-                <li>Alimentação adequada e saudável, da produção ao consumo;</li>
-                <li>Mobilização para o combate à Fome.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" id="headingThree">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
-                aria-expanded="false" aria-controls="collapseThree">
-                Unidos do Bem
-              </button>
-            </h5>
-          </div>
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div class="card-body">
-              30 de março de 2020, São Paulo praticamente parada por causa da pandemia. Ao ver a despensa
-              e as geladeiras de seu buffet em Moema lotadas de insumos por causa de inúmeros eventos
-              adiados, o empresário Carlos Kaufmann teve uma ideia: usar sua infraestrutura, equipe e
-              alimentos para distribuir marmitas pela cidade.<br> Assim, mantinha seus funcionários
-              empregados e alimentava a população de rua — ainda mais vulnerável porque a maioria costuma
-              fazer suas refeições graças à generosidade de donos de bares e restaurantes, que precisaram
-              fechar as portas na quarentena.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div></div>
     <div class="mt-3 mb-3">
-      <button type="button" class="btn btn-outline-primary"><a href="./doacao.html">Seja nosso parceiro</a></button>
+      <button onclick="document.getElementById('formCadastro').hidden = false" type="button"
+        class="btn btn-outline-primary">Seja nosso parceiro
+      </button>
+      <form class="needs-validation" id="formCadastro" hidden novalidate>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="nomeParceiro">Nome do Programa</label>
+            <input type="text" class="form-control" id="nomeParceiro" placeholder="Nome" required>
+            <div class="valid-feedback">
+              Tudo certo!
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="cidadeParceiro">Cidade</label>
+            <input type="text" class="form-control" id="cidadeParceiro" placeholder="Cidade">
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="estadoParceiro">Estado</label>
+            <select id="estadoParceiro" class="form-control">
+              <option selected>Escolher...</option>
+              <option>AC</option>
+              <option>AL</option>
+              <option>AP</option>
+              <option>AM</option>
+              <option>BA</option>
+              <option>CE</option>
+              <option>DF</option>
+              <option>ES</option>
+              <option>GO</option>
+              <option>MA</option>
+              <option>MT</option>
+              <option>MS</option>
+              <option>MG</option>
+              <option>PA</option>
+              <option>PB</option>
+              <option>PR</option>
+              <option>PI</option>
+              <option>RJ</option>
+              <option>RN</option>
+              <option>RS</option>
+              <option>RO</option>
+              <option>RR</option>
+              <option>SC</option>
+              <option>SP</option>
+              <option>SE</option>
+              <option>TO</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-9 mb-3">
+            <label for="descricao">Descrição</label>
+            <input type="text" class="form-control" id="descricao" placeholder="Descrição">
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="telefone">Telefone</label>
+            <input type="text" class="form-control" id="telefone" placeholder="Telefone" required>
+            <div class="invalid-feedback">
+              Informe um número válido
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-outline-primary" onclick="add(nome)" type="submit">Enviar</button>
+      </form>
     </div>
   </section>
-
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
